@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  6 MAR 2014 18:04
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  6 MAR 2014 18:25
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -293,31 +293,28 @@ LaTeX Warning: Citation `ref ' on page 1 undefined on input line 77.
 LaTeX Warning: Citation `ref' on page 1 undefined on input line 77.
 
 
-LaTeX Warning: Citation `ref' on page 1 undefined on input line 81.
+LaTeX Warning: Citation `cha' on page 1 undefined on input line 81.
 
 
-LaTeX Warning: Citation `ref' on page 1 undefined on input line 81.
+LaTeX Warning: Citation `phil' on page 1 undefined on input line 81.
 
 
-LaTeX Warning: Citation `ref' on page 1 undefined on input line 81.
+LaTeX Warning: Citation `uvmp' on page 1 undefined on input line 81.
 
 
-LaTeX Warning: Citation `ref' on page 1 undefined on input line 81.
+LaTeX Warning: Citation `ecga' on page 1 undefined on input line 81.
 
 
-LaTeX Warning: Citation `ref' on page 1 undefined on input line 81.
+LaTeX Warning: Citation `mccall' on page 1 undefined on input line 81.
 
 
-LaTeX Warning: Citation `ref' on page 1 undefined on input line 81.
+LaTeX Warning: Citation `ltga' on page 1 undefined on input line 81.
 
 
-LaTeX Warning: Citation `ref' on page 1 undefined on input line 81.
+LaTeX Warning: Citation `moneda' on page 1 undefined on input line 81.
 
 
-LaTeX Warning: Citation `ref' on page 1 undefined on input line 81.
-
-
-LaTeX Warning: Citation `ref' on page 1 undefined on input line 81.
+LaTeX Warning: Citation `singapore' on page 1 undefined on input line 81.
 
 [1
 
@@ -331,13 +328,13 @@ LaTeX Warning: Citation `ref' on page 2 undefined on input line 100.
 
 [2] (./autoencoder_ppsn.bbl) [3] (./autoencoder_ppsn.aux) ) 
 Here is how much of TeX's memory you used:
- 2068 strings out of 493747
- 27293 string characters out of 3143546
+ 2076 strings out of 493747
+ 27349 string characters out of 3143546
  89512 words of memory out of 3000000
- 5339 multiletter control sequences out of 15000+200000
+ 5347 multiletter control sequences out of 15000+200000
  8065 words of font info for 31 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 37i,5n,24p,1758b,219s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 37i,5n,24p,1775b,219s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/
 2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2
 010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/20
@@ -351,7 +348,7 @@ st/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2010/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2010/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2010/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on autoencoder_ppsn.pdf (3 pages, 148988 bytes).
+Output written on autoencoder_ppsn.pdf (3 pages, 149973 bytes).
 PDF statistics:
  62 PDF objects out of 1000 (max. 8388607)
  44 compressed objects within 1 object stream
