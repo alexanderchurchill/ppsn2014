@@ -96,8 +96,8 @@ Alex's stuff on the optimisation algorithm.
 
 Experiments intro blurb.
 
-\subsection{0/1 Knapsack Problems}
-
+\subsection{Multi-dimensional Knapsack Problem}
+Here we wish to choose of subset of \(N\) items to maximise the total value of items, \(z\), while satisfying \(m\) constraints. We wish to maximise:\\  \(z = \sum_{j=1}^{N} v_jx_j\), subject to \(\sum_{j=1}^{N} w_{ij}x_i \leq c_i, i = 1, ..., m\)\\ \(x_i \in \{0,1\}, j = 1, ..., N\).\\ In the results below, two problems are tackled. The first is the Weing8 instance \cite{ref}, which has 105 items and two constraints (optimal solution is 602,319), and the second is a randomly generated instance with 500 items and one constraint (optimal solution is 104,000). Both instance are available in the supplementary material. If any constraint is violated, the total value of chosen items is multiplied by \(-1\).
 \subsection{Hierarchical If and only If}
 
 \subsection{Royal Road}
