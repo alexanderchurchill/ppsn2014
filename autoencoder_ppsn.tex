@@ -97,11 +97,23 @@ The pipeline of DENAGA is similar to other EDAs and incorporates techniques from
 Experiments intro blurb.
 
 \subsection{Multi-dimensional Knapsack Problem}
-Here we wish to choose of subset of \(N\) items to maximise the total value of items, \(z\), while satisfying \(m\) constraints. We wish to maximise:\\  \(z = \sum_{j=1}^{N} v_jx_j\), subject to \(\sum_{j=1}^{N} w_{ij}x_i \leq c_i, i = 1, ..., m\)\\ \(x_i \in \{0,1\}, j = 1, ..., N\).\\ In the results below, two problems are tackled. The first is the Weing8 instance \cite{ref}, which has 105 items and two constraints (optimal solution is 602,319), and the second is a randomly generated instance with 500 items and one constraint (optimal solution is 104,000). Both instance are available in the supplementary material. If any constraint is violated, the total value of chosen items is multiplied by \(-1\).
+Here we wish to choose of subset of \(N\) items to maximise the total value of items, \(z\), while satisfying \(m\) constraints. We wish to maximise:
+\vspace{2mm}\\ 
+\(z = \sum_{j=1}^{N} v_jx_j\), subject to \(\sum_{j=1}^{N} w_{ij}x_i \leq c_i, i = 1, ..., m\)
+\vspace{2mm}\\
+\(x_i \in \{0,1\}, j = 1, ..., N\).
+\vspace{2mm}\\
+In the results below, two problems are tackled. The first is the Weing8 instance \cite{ref}, which has 105 items and two constraints (optimal solution is 602,319), and the second is a randomly generated instance with 500 items and one constraint (optimal solution is 104,000). Both instances are available in the supplementary material. If any constraint is violated, the total value of chosen items is multiplied by \(-1\).
+
 \subsection{Hierarchical If and only If}
 
 \subsection{Royal Road}
-
+The Royal Road function as defined by Mitchell et al. \cite{mitchell}, divides a bit string into a number of  equally sized, non-overlapping partitions. If all of the bits in the partition are correct (e.g. all 1s), then the partition's fitness contribution is added to the overall fitness. The existence of these ``Building blocks" was meant to act as a ``royal road" for GAs compared to hill-climbers but bad alleles hitchhiking to good partial solutions slows down convergence speed. The problem is defined as,
+\\
+\[
+s(i) = sum of bits...
+\]
+ 
 \subsection{MAXSAT}
 
 \section{Results}
