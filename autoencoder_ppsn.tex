@@ -90,7 +90,7 @@ Sid's stuff here.
 
 \subsection{Optimisation Algorithm}
 
-The pipeline of DENAGA is similar to other EDAs and incorporates techniques from HBOA \cite{hboa}. An initial population of solutions is drawn from a uniform distribution. These solutions are evaluated and the fittest unique x\% are selected (i.e. truncation selection) to be the training set, \(T\). 
+The pipeline of DENAGA is similar to other EDAs and incorporates techniques from HBOA \cite{hboa}. An initial population of solutions, \(P\), is drawn from a uniform distribution. These solutions are evaluated and the fittest unique x\% are selected (i.e. truncation selection) to be in the training set, \(T\). The Denoising Autoencoder, \(D\), is then trained with \(T\) for \(e\) epochs. Following training, a new set of solutions, \(X\), is selected from \(P\) using tournament selection. Each member of \(Y\) is inputted to \(D\), and the output vector, \(y\), is sampled from using a binomial distribution, to produce a new solution. This solution is included in \(P\) if it is better than its closest neighbour according to Restricted Tournament Selection (RTR) \cite{hboa}. Pseudocode for DENAGA is presented in Algorithm 1.
 
 \section{Experiments}
 
