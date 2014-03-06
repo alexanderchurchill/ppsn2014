@@ -1,0 +1,119 @@
+
+%%%%%%%%%%%%%%%%%%%%%%% file typeinst.tex %%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This is the LaTeX source for the instructions to authors using
+% the LaTeX document class 'llncs.cls' for contributions to
+% the Lecture Notes in Computer Sciences series.
+% http://www.springer.com/lncs       Springer Heidelberg 2006/05/04
+%
+% It may be used as a template for your own input - copy it
+% to a new file with a new name and use it as the basis
+% for your article.
+%
+% NB: the document class 'llncs' has its own and detailed documentation, see
+% ftp://ftp.springer.de/data/pubftp/pub/tex/latex/llncs/latex2e/llncsdoc.pdf
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[runningheads,a4paper]{llncs}
+
+\usepackage{amssymb}
+\setcounter{tocdepth}{3}
+\usepackage{graphicx}
+
+\usepackage{url}
+%\urldef{\mailsa}\path{a.churchill,ssgd,c.t.fernando}@qmul.ac.uk
+\newcommand{\keywords}[1]{\par\addvspace\baselineskip
+\noindent\keywordname\enspace\ignorespaces#1}
+
+\begin{document}
+
+\mainmatter  % start of an individual contribution
+
+% first the title is needed
+\title{An Estimation of Distribution-like Algorithm based on a Denoising Autoencoder}
+
+% a short form should be given in case it is too long for the running head
+\titlerunning{An EDA-like Algorithm based on a Denoising Autoencoder}
+
+% the name(s) of the author(s) follow(s) next
+%
+% NB: Chinese authors should write their first names(s) in front of
+% their surnames. This ensures that the names appear correctly in
+% the running heads and the author index.
+%
+\author{Alex%
+%
+\and Sid\and Chrisantha}
+%
+\authorrunning{Alex, Sid and Chrisantha}
+% (feature abused for this document to repeat the title also on left hand pages)
+
+% the affiliations are given next; don't give your e-mail address
+% unless you accept that it will be published
+\institute{School of Electronic Engineering and Computer Science\\Queen Mary, University of London\\
+{\{a.churchill,ssgd,c.t.fernando\}}@qmul.ac.uk}
+
+%
+% NB: a more complex sample for affiliations and the mapping to the
+% corresponding authors can be found in the file "llncs.dem"
+% (search for the string "\mainmatter" where a contribution starts).
+% "llncs.dem" accompanies the document class "llncs.cls".
+%
+
+\toctitle{Lecture Notes in Computer Science}
+\tocauthor{Authors' Instructions}
+\maketitle
+
+
+\begin{abstract}
+In this paper we present a novel neural-based optimisation algorithm. The algorithm follows the traditional generate-update methodology of Estimation of Distribution algorithms, using a denoising autoencoder to learn the structure of promising solutions within its hidden layer, with the output neurons defining a probability distribution that is sampled from to produce new solutions. The algorithm is shown to outperform a canonical Genetic Algorithm on several combinatorial problems, including the multi dimensional 0/1 knapsack problem, MAXSAT and the Hierarchical If and Only If. Analysis shows that the neural network is able to learn interesting structural features of the search space, while the sampling method employed supports continued exploration, enabling optimal solutions to be found on NP-hard problems.
+\end{abstract}
+
+
+\section{Introduction}
+
+Estimation of Distribution Algorithms (EDAs) are a growing field in Evolutionary Computation, which attempt to build a statistical model of sections of a search space in order to uncover underlying structure and guide search in an efficient manner \cite{pelikan2006scalable}. At the heart of an EDA lies a model-building algorithm. Examples include Bayesian Networks \cite{hboa}, Markov Networks \cite{ref} and K-Means clustering \cite{ref}. In this paper we introduce a novel neural-based method for modelling, a denoising autoencoder. An auto encoder is a feed forward neural network, consisting of at least one hidden layer, which is trained to reproduce its inputs from its outputs. Over the course of training the hidden layer learns a representation of the data, which has be used for reconstructing missing data \cite{ref} and dimensionality reduction \cite{ref}. The algorithm introduced in this paper trains a single autoencoder with promising solutions from a population, from which structure of the search space is learnt by the representation in the hidden layer. This differs from traditional EDAs such as PBIL \cite{ref } or ECGA \cite{ref} as an explicit statistical model is not produced. However, the learnt structure can be leveraged to produce new solutions by inputting an existing or randomly generated solution into the network and sampling from the output neurons using a binomial distribution. Results presented in Section 6 show that the autoencoder method is able to outperform a canonical Genetic Algorithm on a range of combinatorial and hierarchical problems.
+
+\section{Background}
+
+Early work on EDAs concentrated on methods that explicitly modelled the probabilities of independent alleles occurring in a population of genotypes. These include the compact Genetic Algorithm \cite{ref}, PBIL \cite{ref} and Univariate Marginal Probability methods\cite{ref}. Improved success was found by using clustering algorithms (ECGA) \cite{ref}, Bayesian Networks \cite{ref}, Markov Networks \cite{ref} and tree structures \cite{ref}. These methods have used greedy search in order to build models of the conditional probabilities between variables.  The use of the autoencoder model in this paper is motivated by its potential to learn high-dimensional dependencies in data, while still maintaining a low computational cost in terms of training time. Recently there has been interest in neural-based methods in an EDA context for multi-objective optimisation. These include Growing Neural Gas (GNG) \cite{ref} and Restricted Boltzmann Machines (RBM) \cite{ref}. An autoencoder is another method for unsupervised learning of features that has potential to model solution structure and has hitherto not been applied to combinatorial optimisation.
+
+Another motivation for this approach is to investigate methods in which Evolutionary Algorithms can be implemented in Neural Networks. The {\em{Neural Replicator Hypothesis}} \cite{ref} proposes that evolutionary processes could operate in the brain at phylogenetic timescales. In \cite{fernando2010neuronal} a network of spiking neurons combined with Hebbian learning, which enabled linkages to be found between features, was applied to combinatorial problems and solved the 128-bit HIFF problem.
+
+\section{Methods}
+
+\subsection{Denoising Autoencoder}
+
+Sid's stuff here.
+
+\subsection{Optimisation Algorithm}
+
+Alex's stuff on the optimisation algorithm.
+
+\section{Experiments}
+
+Experiments intro blurb.
+
+\subsection{0/1 Knapsack Problems}
+
+\subsection{Hierarchical If and only If}
+
+\subsection{Royal Road}
+
+\subsection{MAXSAT}
+
+\section{Results}
+
+\section{Discussion}
+
+\section{Conclusion}
+
+\subsubsection*{Acknowledgments.} The heading should be treated as a
+subsubsection heading and should not be assigned a number.
+
+\bibliographystyle{splncs}
+\bibliography{autoencoder_ppsn}
+
+\end{document}

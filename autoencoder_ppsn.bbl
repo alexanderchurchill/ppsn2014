@@ -1,0 +1,18 @@
+\begin{thebibliography}{1}
+
+\bibitem{pelikan2006scalable}
+Pelikan, M., Sastry, K., Cant{\'u}-Paz, E.:
+\newblock Scalable optimization via probabilistic modeling.
+\newblock Springer (2006)
+
+\bibitem{hboa}
+Pelikan, M.:
+\newblock Hierarchical Bayesian optimization algorithm.
+\newblock Springer (2005)
+
+\bibitem{fernando2010neuronal}
+Fernando, C., Goldstein, R., Szathm{\'a}ry, E.:
+\newblock The neuronal replicator hypothesis.
+\newblock Neural Computation \textbf{22}(11) (2010)  2809--2857
+
+\end{thebibliography}
