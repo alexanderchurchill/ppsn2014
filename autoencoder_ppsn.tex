@@ -90,7 +90,7 @@ Sid's stuff here.
 
 \subsection{Optimisation Algorithm}
 
-The pipeline of DENAGA is similar to other EDAs and incorporates techniques from HBOA \cite{hboa}. An initial population of solutions, \(P\), is drawn from a uniform distribution. These solutions are evaluated and the fittest unique x\% are selected (i.e. truncation selection) to be in the training set, \(T\). The Denoising Autoencoder, \(D\), is then trained with \(T\) for \(e\) epochs. Following training, a new set of solutions, \(X\), is selected from \(P\) using tournament selection. Each member of \(Y\) is inputted to \(D\), and the output vector, \(y\), is sampled from using a binomial distribution, to produce a new solution. This solution is included in \(P\) if it is better than its closest neighbour according to Restricted Tournament Selection (RTR) \cite{hboa}. Pseudocode for DENAGA is presented in Algorithm 1.
+The pipeline of DENAGA is similar to other EDAs and incorporates techniques from HBOA \cite{hboa}. A population of solutions is maintained, \(P_t\), updated at each iteration, \(t\). An initial population of solutions, \(P_0\), is drawn from a uniform distribution. These solutions are evaluated and the fittest unique x\% are selected (i.e. truncation selection) to be in the training set, \(\hat{P_t}\). The Denoising Autoencoder, \(D_t\), is then trained with \(\hat{P_t}\) for \(e\) epochs. Following training, a new set of solutions, \(S_t\), is selected from \(P\) using tournament selection (with replacement). Each member of \(S_t\) is inputted to \(D_t\), and the output vector, \(y\), is sampled from using a binomial distribution, to produce a new solution. This solution is included in \(P_{t+1}\) if it is better than its closest neighbour according to Restricted Tournament Selection (RTR) \cite{hboa}. Pseudocode for DENAGA is presented in Algorithm 1.
 
 \section{Experiments}
 
@@ -98,7 +98,7 @@ Experiments intro blurb.
 
 \subsection{Multi-dimensional Knapsack Problem}
 Here we wish to choose of subset of \(N\) items to maximise the total value of items, \(z\), while satisfying \(m\) constraints. We wish to maximise:
-\vspace{2mm}\\ 
+\vspace{2mm}\\
 \(z = \sum_{j=1}^{N} v_jx_j\), subject to \(\sum_{j=1}^{N} w_{ij}x_i \leq c_i, i = 1, ..., m\)
 \vspace{2mm}\\
 \(x_i \in \{0,1\}, j = 1, ..., N\).
@@ -119,7 +119,7 @@ s(i) = sum of bits...
 \section{Results}
 
 \section{Discussion}
-
+% HyperPothesis: When the input features are independent then high corruption helps because you don't care about information in the input as much, and you're forcing solutions to have a similar structure (the output structure is not dependant on the input structure because independent. On structured problems like the HIFF there is a lot of information in the inputs, so distorting this discards the information that might be useful.)
 \section{Conclusion}
 
 \subsubsection*{Acknowledgments.} The heading should be treated as a
