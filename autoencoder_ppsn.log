@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  8 MAR 2014 21:20
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  8 MAR 2014 21:41
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -511,6 +511,9 @@ LaTeX Warning: Reference `' on page 6 undefined on input line 181.
 
 [6 <./images/105_knapsacks.png> <./images/knapsack_500_results.png> <./images/1
 28_hiff_results.png> <./images/royal_road_128_results.png>]
+
+LaTeX Warning: Reference `' on page 7 undefined on input line 185.
+
 (./autoencoder_ppsn.bbl) [7] (./autoencoder_ppsn.aux)
 
 LaTeX Warning: There were undefined references.
@@ -542,7 +545,7 @@ ve/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive
 /2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2
 010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/201
 0/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on autoencoder_ppsn.pdf (7 pages, 337005 bytes).
+Output written on autoencoder_ppsn.pdf (7 pages, 337314 bytes).
 PDF statistics:
  97 PDF objects out of 1000 (max. 8388607)
  64 compressed objects within 1 object stream
