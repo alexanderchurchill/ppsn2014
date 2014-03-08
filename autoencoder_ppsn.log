@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  8 MAR 2014 11:08
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  8 MAR 2014 11:11
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -335,6 +335,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 111--113
 
  []
 
+Missing character: There is no Ó in font cmr10!
+Missing character: There is no Ó in font cmr10!
 (./autoencoder_ppsn.bbl [3]) [4] (./autoencoder_ppsn.aux) ) 
 Here is how much of TeX's memory you used:
  2077 strings out of 493747
@@ -357,7 +359,7 @@ st/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2010/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2010/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2010/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on autoencoder_ppsn.pdf (4 pages, 154324 bytes).
+Output written on autoencoder_ppsn.pdf (4 pages, 154751 bytes).
 PDF statistics:
  65 PDF objects out of 1000 (max. 8388607)
  46 compressed objects within 1 object stream
