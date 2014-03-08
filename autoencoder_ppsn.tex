@@ -21,6 +21,7 @@
 \usepackage{amssymb}
 \setcounter{tocdepth}{3}
 \usepackage{graphicx}
+\usepackage{subfigure, caption}
 
 \usepackage{url}
 %\urldef{\mailsa}\path{a.churchill,ssgd,c.t.fernando}@qmul.ac.uk
@@ -117,7 +118,9 @@ s(i) = sum of bits...
 \subsection{MAXSAT}
 
 \section{Results}
+
 DAGA is compared to a canonical generational Genetic Algorithm (GA) on the problems described in Section~\ref{sec:experiments}. The GA employs tournament selection to select parents, two point crossover for recombination (with probability \(p_c\)) and a probability, \(p_m\), of a bit flip mutation at each allele. For each experiment a large parameter sweep was performed on both DAGA and the GA and the best configurations were chosen for comparison. Figure~\ref{} presents graphs showing the mean fitness (averaged over ten trials) of the best solution in the population at each iteration for the two algorithms on the 5 problems. Details of the best solutions found are given in table~\ref{}. 
+
 \section{Discussion}
 % HyperPothesis: When the input features are independent then high corruption helps because you don't care about information in the input as much, and you're forcing solutions to have a similar structure (the output structure is not dependant on the input structure because independent. On structured problems like the HIFF there is a lot of information in the inputs, so distorting this discards the information that might be useful.)
 \section{Conclusion}
