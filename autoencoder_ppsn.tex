@@ -90,10 +90,10 @@ Sid's stuff here.
 
 \subsection{Optimisation Algorithm}
 
-The pipeline of DENAGA is similar to other EDAs and incorporates techniques from HBOA \cite{hboa}. A population of solutions is maintained, \(P_t\), updated at each iteration, \(t\). An initial population of solutions, \(P_0\), is drawn from a uniform distribution. These solutions are evaluated and the fittest unique x\% are selected (i.e. truncation selection) to be in the training set, \(\hat{P_t}\). The Denoising Autoencoder, \(D_t\), is then trained with \(\hat{P_t}\) for \(e\) epochs. Following training, a new set of solutions, \(S_t\), is selected from \(P\) using tournament selection (with replacement). Each member of \(S_t\) is inputted to \(D_t\), and the output vector, \(y\), is sampled from using a binomial distribution, to produce a new solution. This solution is included in \(P_{t+1}\) if it is better than its closest neighbour according to Restricted Tournament Selection (RTR) \cite{hboa}. Pseudocode for DENAGA is presented in Algorithm 1.
+The pipeline of DAGA is similar to other EDAs and incorporates techniques from HBOA \cite{hboa}. A population of solutions is maintained, \(P_t\), updated at each iteration, \(t\). An initial population of solutions, \(P_0\), is drawn from a uniform distribution. These solutions are evaluated and the fittest unique x\% are selected (i.e. truncation selection) to be in the training set, \(\hat{P_t}\). The Denoising Autoencoder, \(D_t\), is then trained with \(\hat{P_t}\) for \(e\) epochs. Following training, a new set of solutions, \(S_t\), is selected from \(P\) using tournament selection (with replacement). Each member of \(S_t\) is inputted to \(D_t\), and the output vector, \(y\), is sampled from using a binomial distribution, to produce a new solution. This solution is included in \(P_{t+1}\) if it is better than its closest neighbour according to Restricted Tournament Selection (RTR) \cite{hboa}. Pseudocode for DAGA is presented in Algorithm 1.
 
 \section{Experiments}
-
+\label{sec:experiments}
 Experiments intro blurb.
 
 \subsection{Multi-dimensional Knapsack Problem}
@@ -117,12 +117,12 @@ s(i) = sum of bits...
 \subsection{MAXSAT}
 
 \section{Results}
-DENEGA is compared to 
+DAGA is compared to a canonical generational Genetic Algorithm (GA) on the problems described in Section~\ref{sec:experiments}. The GA employs tournament selection to select parents, two point crossover for recombination (with probability \(p_c\)) and a probability, \(p_m\), of a bit flip mutation at each allele. For each experiment a large parameter sweep was performed on both DAGA and the GA and the best configurations were chosen for comparison. Figure~\ref{} presents graphs showing the mean fitness (averaged over ten trials) of the best solution in the population at each iteration for the two algorithms on the 5 problems. Details of the best solutions found are given in table~\ref{}. 
 \section{Discussion}
 % HyperPothesis: When the input features are independent then high corruption helps because you don't care about information in the input as much, and you're forcing solutions to have a similar structure (the output structure is not dependant on the input structure because independent. On structured problems like the HIFF there is a lot of information in the inputs, so distorting this discards the information that might be useful.)
 \section{Conclusion}
 
-\subsubsection*{Acknowledgments.} The work is funded by the FQEB Templeton grant ”Bayes and Darwin”, and the FP-7 FET OPEN Grant INSIGHT.
+\subsubsection*{Acknowledgments.} The work is funded by the FQEB Templeton grant ``Bayes and Darwin", and the FP-7 FET OPEN Grant INSIGHT.
 
 \bibliographystyle{splncs}
 \bibliography{autoencoder_ppsn}
