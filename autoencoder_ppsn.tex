@@ -151,9 +151,7 @@ The Royal Road function as defined by Mitchell et al. \cite{mitchell}, divides a
 \] 
 If a string contains two instances of s, a fitness of 16 is achieved. If all instances are found, fitness = 128. \(s_i\) instances were blocks of all 1s but as with the HIFF, a random mask was applied to the output of DAGA before fitness evaluation.
 \subsection{MAXSAT}
-
-\section{Results}
-\begin{figure}[t!]
+\begin{figure}[!]
 \centering
 \subfigure[]{
 \makebox[.47\textwidth]{
@@ -179,16 +177,24 @@ If a string contains two instances of s, a fitness of 16 is achieved. If all ins
     \label{fig:subfig3}
     }
 }
+\subfigure[]{
+\makebox[.47\textwidth]{
+    \includegraphics[scale=0.35]{images/royal_road_128_results.png}
+    \label{fig:subfig4}
+    }
+}
 
 \caption[Optional caption for list of figures]{Plots showing the mean fitness of the best solution in the population over time, averaged over 10 trials.}
 \label{figure:experiment_subplots}
 \end{figure}
 
+\section{Results}
+
 DAGA is compared to a canonical generational Genetic Algorithm (GA) on the problems described in Section~\ref{sec:experiments}. The GA employs tournament selection to select parents, two point crossover for recombination (with probability \(p_c\)) and a probability, \(p_m\), of a bit flip mutation at each allele. The GA is implemented in the DEAP framework \cite{deap}, while DAGA is implemented in Python, using Theano for the \(dA\). Programming code is available in the online supplementary material.  For each experiment a large parameter sweep was performed on both DAGA and the GA and the best configurations were chosen for comparison. Figure~\ref{figure:experiment_subplots} presents graphs showing the mean fitness (averaged over ten trials) of the best solution in the population at each iteration for the two algorithms on the 5 problems. Details of the best solutions found are given in table~\ref{}.
 
-From Figure~\ref{figure:experiment_subplots}  we can immediately see that DAGA finds significantly better solutions than the GA or optimal solutions significantly faster than the GA. On three of the five experiments (both knapsacks and MAXSAT), DAGA finds significantly better results than the GA is able to, given the evaluation limits. On the Weing8 instance DAGA reaches the optimum solution 8 out of 10 attempts, and on the 500-item instance 7 out of 10 attempts. On the MAXSAT instance, DAGA also reaches the optimum 70\% of the time. On all three of these problems the GA is unable to locate the optimal solution a single time, within the evaluation limits. On the HIFF, DAGA locates the optimal solution every time, while the GA locates it on only half of the trials. On the Royal Road, DAGA again locates the optimum on every trial, while the GA finds it 9 out of 10. These results show that DAGA is able to find higher quality solutions and more consistently locate the optimum compared to the GA, across a wide range of problems.
+From Figure~\ref{figure:experiment_subplots}  we can immediately see that DAGA finds significantly better solutions than the GA or optimal solutions significantly faster than the GA. On three of the five experiments (both knapsacks and MAXSAT), DAGA finds significantly better results than the GA is able to, given the evaluation limits. On the Weing8 instance DAGA reaches the optimum solution 8 out of 10 attempts, and on the 500-item instance 7 out of 10 attempts. On the MAXSAT instance, DAGA also reaches the optimum 70\% of the time. On all three of these problems the GA is unable to locate the optimal solution a single time, within the evaluation limits. On the HIFF, DAGA locates the optimal solution every time, while the GA locates it on only half of the trials. On the Royal Road, DAGA again locates the global optima on every trial, while the GA finds it 9 out of 10. These results show that DAGA is able to find higher quality solutions and more consistently locate the optimum compared to the GA, across a wide range of problems.
 
-As well as frequently obtaining better quality solutions at the end of the optimisation process, DAGA also finds significantly better solutions more quickly than the GA on a number of problems. Table~\ref{} shows the mean best solution found after different numbers of function evaluations have passed. From this we see that on all of the problems except for the ....
+As well as frequently obtaining better quality solutions at the end of the optimisation process, DAGA also finds significantly better solutions more quickly than the GA on a number of problems. Table~\ref{} shows the mean best solution found after different numbers of function evaluations have passed. From this we see that on all of the problems except for MAXSAT, DAGA finds significantly better solutions than the GA after a quarter of function evaluations have passed. On the HIFF and RR functions, where the GA is able to locate optimal solutions eventually, although not consistently, DAGA's superiority stops being statistically significant after 70\% of evaluations have passed for RR and 75\% for HIFF.
 
 
 
