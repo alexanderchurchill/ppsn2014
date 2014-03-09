@@ -137,13 +137,19 @@ In the results below, two problems are tackled. The first is the Weing8 instance
 
 \subsection{Hierarchical If and only If}
 
+The Hierarchical If and only If (HIFF) problem was created by Watson et al., as an example of a function which is not separable \cite{ref}. It is a pathological function for a hill climber because of a huge number of local optima. The HIFF is structured as a balanced binary tree \cite{hboa}, where at each lower level a transfer function is applied to consecutive non-overlapping 2-bit partitions, 00 \(\rightarrow\) 0, 11 \(\rightarrow\) 1, anything else \(\rightarrow\) null, to define the string in the layer above. At each level, 00 and 11 blocks contribute to the fitness by \(2^{level}\). Two global optima exist, a string of all 1s and all 0s. In results section, DAGA is applied to the 128-bit HIFF. In order to remove any possible bias towards an all 1s solution, solutions from DAGA have a random bit mask (fixed before each trial) applied to them before evaluating fitness.
+
 \subsection{Royal Road}
-The Royal Road function as defined by Mitchell et al. \cite{mitchell}, divides a bit string into a number of  equally sized, non-overlapping partitions. If all of the bits in the partition are correct (e.g. all 1s), then the partition's fitness contribution is added to the overall fitness. The existence of these ``Building blocks" was meant to act as a ``royal road" for GAs compared to hill-climbers but bad alleles hitchhiking to good partial solutions slows down convergence speed. The problem is defined as,
+The Royal Road function as defined by Mitchell et al. \cite{mitchell}, divides a bit string, \(x\), into a number of  equally sized, non-overlapping partitions, \(z_i\in[x_i, ..., x_{i+n}])\). If all of the bits in the partition match a predefined pattern, \(s_i\) , then the partition's fitness contribution is added to the overall fitness. The existence of these ``Building blocks" was meant to act as a ``royal road" for GAs compared to hill-climbers but bad alleles hitchhiking to good partial solutions slows down convergence speed. The 128-bit problem with 8-bit partitions is defined as,
 \\
 \[
-s(i) = sum of bits...
-\]
- 
+    f(x)= \sum_{i=1}^{16} \delta_i(x)o(s_i), \text{where } \delta_i(x)
+\begin{cases}
+    1,& \text{if } x\in s_i\\
+    0,              & \text{otherwise}
+\end{cases}
+\] 
+If a string contains two instances of s, a fitness of 16 is achieved. If all instances are found, fitness = 128. \(s_i\) instances were blocks of all 1s but as with the HIFF, a random mask was applied to the output of DAGA before fitness evaluation.
 \subsection{MAXSAT}
 
 \section{Results}

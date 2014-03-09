@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  8 MAR 2014 21:41
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  9 MAR 2014 12:02
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -480,41 +480,44 @@ LaTeX Warning: Citation `vincent2010stacked' on page 4 undefined on input line
 LaTeX Warning: Citation `ref' on page 5 undefined on input line 136.
 
 
-LaTeX Warning: Citation `mitchell' on page 5 undefined on input line 141.
+LaTeX Warning: Citation `ref' on page 5 undefined on input line 140.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 141--143
+LaTeX Warning: Citation `mitchell' on page 5 undefined on input line 143.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--145
 
  []
 
-<images/105_knapsacks.png, id=30, 578.16pt x 433.62pt>
+[5] <images/105_knapsacks.png, id=33, 578.16pt x 433.62pt>
 File: images/105_knapsacks.png Graphic file (type png)
 
 <use images/105_knapsacks.png>
-<images/knapsack_500_results.png, id=32, 578.16pt x 433.62pt>
+<images/knapsack_500_results.png, id=35, 578.16pt x 433.62pt>
 File: images/knapsack_500_results.png Graphic file (type png)
 
 <use images/knapsack_500_results.png>
-<images/128_hiff_results.png, id=33, 578.16pt x 433.62pt>
+<images/128_hiff_results.png, id=36, 578.16pt x 433.62pt>
 File: images/128_hiff_results.png Graphic file (type png)
 
 <use images/128_hiff_results.png>
-<images/royal_road_128_results.png, id=34, 578.16pt x 433.62pt>
+<images/royal_road_128_results.png, id=37, 578.16pt x 433.62pt>
 File: images/royal_road_128_results.png Graphic file (type png)
 
-<use images/royal_road_128_results.png> [5]
+<use images/royal_road_128_results.png>
 
-LaTeX Warning: Citation `deap' on page 6 undefined on input line 181.
+LaTeX Warning: Citation `deap' on page 6 undefined on input line 187.
 
 
-LaTeX Warning: Reference `' on page 6 undefined on input line 181.
+LaTeX Warning: Reference `' on page 6 undefined on input line 187.
 
-[6 <./images/105_knapsacks.png> <./images/knapsack_500_results.png> <./images/1
-28_hiff_results.png> <./images/royal_road_128_results.png>]
 
-LaTeX Warning: Reference `' on page 7 undefined on input line 185.
+LaTeX Warning: Reference `' on page 6 undefined on input line 191.
 
-(./autoencoder_ppsn.bbl) [7] (./autoencoder_ppsn.aux)
+[6] (./autoencoder_ppsn.bbl [7 <./images/105_knapsacks.png> <./images/knapsack_
+500_results.png> <./images/128_hiff_results.png> <./images/royal_road_128_resul
+ts.png>]) [8] (./autoencoder_ppsn.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -529,7 +532,7 @@ Here is how much of TeX's memory you used:
  7027 multiletter control sequences out of 15000+200000
  8684 words of font info for 33 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 38i,8n,38p,1775b,292s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,9n,38p,1775b,313s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></
@@ -545,10 +548,10 @@ ve/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive
 /2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2
 010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/201
 0/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on autoencoder_ppsn.pdf (7 pages, 337314 bytes).
+Output written on autoencoder_ppsn.pdf (8 pages, 339861 bytes).
 PDF statistics:
- 97 PDF objects out of 1000 (max. 8388607)
- 64 compressed objects within 1 object stream
+ 100 PDF objects out of 1000 (max. 8388607)
+ 66 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
