@@ -15,4 +15,23 @@ Fernando, C., Goldstein, R., Szathm{\'a}ry, E.:
 \newblock The neuronal replicator hypothesis.
 \newblock Neural Computation \textbf{22}(11) (2010)  2809--2857
 
+\bibitem{zhang2000bayesian}
+Zhang, B.T., Shin, S.Y.:
+\newblock Bayesian evolutionary optimization using helmholtz machines.
+\newblock In: Parallel Problem Solving from Nature PPSN VI, Springer (2000)
+  827--836
+
+\bibitem{tang2010restricted}
+Tang, H., Shim, V.A., Tan, K.C., Chia, J.Y.:
+\newblock Restricted boltzmann machine based algorithm for multi-objective
+  optimization.
+\newblock In: Evolutionary Computation (CEC), 2010 IEEE Congress on, IEEE
+  (2010)  1--8
+
+\bibitem{pelikan2001escaping}
+Pelikan, M., Goldberg, D.E.:
+\newblock Escaping hierarchical traps with competent genetic algorithms.
+\newblock In: Proceedings of the Genetic and Evolutionary Computation
+  Conference (GECCO-2001). (2001)  511--518
+
 \end{thebibliography}

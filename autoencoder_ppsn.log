@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2013.2.3)  29 MAR 2014 14:42
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2013.2.3)  29 MAR 2014 17:28
 entering extended mode
  %&-line parsing enabled.
 **autoencoder_ppsn.tex
@@ -370,10 +370,6 @@ LaTeX Warning: Citation `Watson' on page 3 undefined on input line 117.
 
 [3]
 
-LaTeX Warning: Citation `bishop1995neural' on page 4 undefined on input line 14
-5.
-
-
 ! LaTeX Error: Cannot determine size of graphic in images/boxplots_basins.png (
 no BoundingBox).
 
@@ -381,7 +377,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.149 ....6\textwidth]{images/boxplots_basins.png}
+l.150 ....6\textwidth]{images/boxplots_basins.png}
                                                   
 ? q
 OK, entering \batchmode...
@@ -395,98 +391,107 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.157 ...\textwidth]{images/hiff-8-transition.png}
+l.158 ...\textwidth]{images/hiff-8-transition.png}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 File: images/hiff-8-transition.png Graphic file (type eps)
- <images/hiff-8-transition.png> [4]
+ <images/hiff-8-transition.png>
+Underfull \vbox (badness 3792) has occurred while \output is active []
 
-LaTeX Warning: Citation `ref' on page 5 undefined on input line 181.
+ [4]
+
+LaTeX Warning: Citation `ref' on page 5 undefined on input line 182.
 
  [5]
 
-LaTeX Warning: Citation `ref' on page 6 undefined on input line 185.
+LaTeX Warning: Citation `ref' on page 6 undefined on input line 186.
+
+
+LaTeX Warning: Citation `mitchell' on page 6 undefined on input line 189.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 189--191
+
+ []
 
  [6]
 
-LaTeX Warning: Citation `mitchell' on page 7 undefined on input line 188.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 188--190
-
- []
-
-
 LaTeX Warning: Citation `watson_evolution' on page 7 undefined on input line 20
-4.
+5.
 
 
 LaTeX Warning: Citation `Igel benchmarking' on page 7 undefined on input line 2
-07.
+08.
 
- [7]
 
-Package caption Warning: \label before \caption on input line 226.
+Package caption Warning: \label before \caption on input line 227.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `table:main_results' on page 8 undefined on input line
- 209.
+LaTeX Warning: Reference `table:main_results' on page 7 undefined on input line
+ 210.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 219--219
+ [7]
+Underfull \hbox (badness 10000) in paragraph at lines 220--220
 []\OT1/cmr/m/n/9 Knapsack
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 221--221
+Underfull \hbox (badness 10000) in paragraph at lines 222--222
 []\OT1/cmr/m/n/9 Knapsack
  []
 
 
-Overfull \hbox (38.38046pt too wide) in paragraph at lines 212--227
+Overfull \hbox (38.38046pt too wide) in paragraph at lines 213--228
 [][]
  []
 
 
-Package caption Warning: \label before \caption on input line 226.
+Package caption Warning: \label before \caption on input line 227.
 See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `table:main_results' on page 8 undefined on input line
- 230.
+ 231.
+
+
+Underfull \vbox (badness 5741) has occurred while \output is active []
 
  [8]
 
-Package caption Warning: \label before \caption on input line 248.
+Package caption Warning: \label before \caption on input line 249.
 See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `table:continuous_results' on page 9 undefined on inpu
-t line 233.
+t line 234.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--241
+Underfull \hbox (badness 10000) in paragraph at lines 242--242
 []\OT1/cmr/m/n/9 Rosenbrock
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 244--244
+Underfull \hbox (badness 10000) in paragraph at lines 245--245
 []\OT1/cmr/m/n/9 Rastrigin
  []
 
 
-Overfull \hbox (70.55728pt too wide) in paragraph at lines 235--249
+Overfull \hbox (70.55728pt too wide) in paragraph at lines 236--250
 [][]
  []
 
 
-Overfull \hbox (56.88594pt too wide) in paragraph at lines 257--264
+Overfull \hbox (56.88594pt too wide) in paragraph at lines 258--265
 [][]
  []
 
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9]
 
 ! LaTeX Error: Cannot determine size of graphic in images/boxy_square_cmap.png 
 (no BoundingBox).
@@ -495,7 +500,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.269 ...0\textwidth]{images/boxy_square_cmap.png}
+l.270 ...0\textwidth]{images/boxy_square_cmap.png}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -504,7 +509,7 @@ File: images/boxy_square_cmap.png Graphic file (type eps)
  <images/boxy_square_cmap.png>
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!htbp') on input line 275.
+               Default added (so using `!htbp') on input line 276.
 
 
 ! LaTeX Error: Cannot determine size of graphic in images/first_pop.png (no Bou
@@ -514,7 +519,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.283 }
+l.284 }
        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -529,14 +534,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.290 }
+l.291 }
        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 File: images/no_learning.png Graphic file (type eps)
- <images/no_learning.png> (./autoencoder_ppsn.bbl [9]) [10] [11] [12] (./autoen
-coder_ppsn.aux)
+ <images/no_learning.png> (./autoencoder_ppsn.bbl) [10] [11] [12] (./autoencode
+r_ppsn.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -545,12 +550,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3036 strings out of 495062
- 40905 string characters out of 1182645
- 132489 words of memory out of 3000000
- 6191 multiletter control sequences out of 15000+50000
+ 3038 strings out of 495062
+ 40947 string characters out of 1182645
+ 122489 words of memory out of 3000000
+ 6193 multiletter control sequences out of 15000+50000
  11544 words of font info for 44 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  36i,10n,38p,1696b,346s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on autoencoder_ppsn.dvi (12 pages, 42744 bytes).
+Output written on autoencoder_ppsn.dvi (12 pages, 41560 bytes).
