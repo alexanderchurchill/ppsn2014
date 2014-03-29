@@ -86,6 +86,38 @@ The use of the autoencoder model in this paper is motivated by its potential to 
 
 A second motivation for this approach is to investigate methods in which Evolutionary Algorithms can be implemented using neural structures. The {\em{Neural Replicator Hypothesis}} \cite{ref} proposes that evolutionary processes could operate in the brain at ontogenetic timescales. In \cite{fernando2010neuronal}, a (1+1)-ES is implemented in a network of spiking neurons. Adding Hebbian learning enabled linkages to be found between features, and the 128-bit HIFF problem to be solved.
 
+\section{Sid's Shit}
+EDAs attempt to probabilistically model the population of best solutions at each generation and produce new solutions by sampling from this model. Therefore an EDA algorithm consists of two main components, model building/estimation and sampling. 
+
+EDAs vary in the complexity of the models that are employed for modelling distributions. More complex models are better at capturing structure from the training data, however they are often hard to train and can lead to significantly longer computational times. However, difficult problems may require the use of such complex models, without which convergence is impossible. 
+
+The data generating distribution for high dimensional data is often very complex and is modelled better with complex probabilistic models. This improvement in modelling capacity helps improve performance of an EDA \cite{pelikan2002survey}. There are several EDAs that use complex probabilistic models to model the distribution of individuals at every generation [RBM,hBOA,etc etc]. 
+
+In this work, we propose a model that uses a denoising autoencoder for learning to model the structure of the best solutions and to generate new solutions at each iteration.
+A standard autoencoder is a model that learns the structure or distribution of the training data by means of a layer of latent or hidden variables. An autoencoder is comprised of an encoder and decoder network. Training is performed by minimising the error in reconstructing the input given the hidden representation.  The encoder network is a non-linear generalisation of PCA \cite{hinton2006reducing}. The autoencoder learns interactions between the input attributes and maps it to the hidden layer via a non-linear transformation, making it a powerful model for learning structure. 
+
+In our algorithm we use a denoising autoencoder (dA) which is a variant of the standard autoencoder \cite{vincent2008extracting}. The denoising autoencoder tries to recreate the input from `corrupted' or `noisy' versions of the input. Autoencoders are trained along with strong regularisation in order to impose an information bottleneck on the model. If this is not done carefully, it would be very easy for the autoencoder to learn the identity transformation which would not be very useful. Adding the denoising criterion to the model forces the model to learn more robust representations which are invariant when the input is partially corrupted. Although denoising was introduced in order to encourage the learning of more robust representations, in our system we employ the denoising criterion to widen the basins of attraction around the best individuals in every generation. During training, we train the autoencoder on the most promising solutions, and by increasing corruption, we encourage individuals that are far away from the training set, to move towards the nearest high quality solution. By making use of the corruption noise as a tuneable parameter, the extent of the basins of attraction can be controlled, with high corruption giving rise to large basins of attraction. 
+
+We present a toy example in order to validate our hypothesis. We train an autoencoder on an 8-bit HIFF problem \cite{Watson}. At each generation we train the autoencoder on the 10 best individuals from that generation. Fig 2 shows the transition probabilities for all 256 possible genomic permutations after training. We observe that bands of high probability occur around the top and bottom genomes which are closest to the two optimal solutions, strings of all ones and all zeros. There are also some high probability regions along the diagonal. The figure shows that the autoencoder learns the structure of the best solutions and encourages sampled solutions to tend towards these. It also shows that the autoencoder reconstructs some of the inputs with high probability. The fact that the new population is polarised towards both the optimum solutions demonstrates that the autoencoder is capable of learning complex structure and retaining information about several classes of solutions, thus enabling more effective search. 
+
+In fig 3 we examine the use of corruption noise to control the size of the basins of attraction around the good solutions. We train the GA on a 20-bit MaxOnes problem. The choice of the problem was motivated by the fact that MaxOnes has a unique optimum solution and the hamming distances from the optimal solution are easy to interpret. We trained the GA for n iterations with varying corruption rates. The boxplot shows the hamming distance of the new population from the optimal solution after n iterations. It can be seen that large corruption values show smaller hamming distances, implying that the basin of attraction around the training data is larger. MORE DETAILS NEEDED.
+
+\begin{figure}[t!]
+\center
+\includegraphics[width = 0.6\textwidth]{images/boxplots_basins.png}
+
+\caption{Hamming distances to optimal solution on MaxOnes with different corruption levels.} 
+\label{figure:8bithiff}
+\end{figure}
+
+\begin{figure}[t!]
+\center
+\includegraphics[width = 0.8\textwidth]{images/hiff-8-transition.png}
+
+\caption{8-bit HIFF transition matrix.} 
+\label{figure:8bithiff}
+\end{figure}
+
 \section{Methods}
 
 \subsection{Autoencoders}
@@ -126,9 +158,10 @@ The pipeline of the \emph{Denoising Autoencoder Genetic Algorithm} (DAGA) is sim
 
 \section{Experiments}
 \label{sec:experiments}
-Experiments intro blurb.
+DAGA is tested on three sets of experiments: (1) discrete, (2) continuous and (3) accumulation of adaptation problems. 
 
-\subsection{Multi-dimensional Knapsack Problem}
+\subsection{Discrete}
+\subsubsection{Multi-dimensional Knapsack Problem}
 Here we wish to choose of subset of \(N\) items to maximise the total value of items, \(z\), while satisfying \(m\) constraints. We wish to maximise:
 \vspace{2mm}\\
 \(z = \sum_{j=1}^{N} v_jx_j\), subject to \(\sum_{j=1}^{N} w_{ij}x_i \leq c_i, i = 1, ..., m\)
@@ -137,11 +170,11 @@ Here we wish to choose of subset of \(N\) items to maximise the total value of i
 \vspace{2mm}\\
 Two different instances are used in the results presented below. The first is the Weing8 instance \cite{ref}, which has 105 items and two constraints (optimal solution is 602,319), and the second is a randomly generated instance with 500 items and one constraint (optimal solution is 100,104). Both instances are available in the supplementary material. If any of the \(m\) constraints are violated, the total value of chosen items is multiplied by \(-1\).
 
-\subsection{Hierarchical If and only If}
+\subsubsection{Hierarchical If and only If}
 
 The Hierarchical If and only If (HIFF) problem was created by Watson et al., as an example of a function which is not separable \cite{ref}. It is a pathological function for a hill climber because of a very large number of local optima. The HIFF is structured as a balanced binary tree \cite{hboa}, where at each lower level a transfer function is applied to consecutive non-overlapping 2-bit partitions, 00 \(\rightarrow\) 0, 11 \(\rightarrow\) 1, anything else \(\rightarrow\) null, to define the string in the layer above. At each level, 00 and 11 blocks contribute to the fitness by \(2^{level}\). Two global optima exist, a string of all 1s and all 0s. In the results section, DAGA is applied to the 128-bit HIFF. In order to remove any possible bias towards an all 1s solution, solutions from DAGA have a random bit mask (fixed before each trial) applied to them before evaluating fitness.
 
-\subsection{Royal Road}
+\subsubsection{Royal Road}
 The Royal Road function as defined by Mitchell et al. \cite{mitchell}, divides a bit string, \(x\), into a number of  equally sized, non-overlapping partitions, \(z_i\in[x_i, ..., x_{i+n}])\). If all of the bits in the partition match a predefined pattern, \(s_i\) , then the partition's fitness contribution is added to the overall fitness. The existence of these ``Building blocks" was meant to act as a ``royal road" for GAs compared to hill-climbers but bad alleles hitchhiking to good partial solutions slows down convergence speed. The 128-bit problem with 8-bit partitions is defined as,
 \\
 \[
@@ -152,48 +185,18 @@ The Royal Road function as defined by Mitchell et al. \cite{mitchell}, divides a
 \end{cases}
 \] 
 If a string contains two instances of s, a fitness of 16 is achieved. If all instances are found, fitness = 128. \(s_i\) instances are blocks of all 1s but as with the HIFF, a random mask is applied to the output of DAGA before fitness evaluation.
-\subsection{MAXSAT}
-\begin{figure}[!]
-\centering
-\subfigure[]{
-\makebox[.47\textwidth]{
-    \includegraphics[scale=0.35]{images/105_knapsacks.png}
-    \label{fig:subfig1}
-    }
-}
-\subfigure[]{
-\makebox[.47\textwidth]{
-    \includegraphics[scale=0.35]{images/knapsack_500_results.png}
-    \label{fig:subfig2}
-    }
-}
-\subfigure[]{
-\makebox[.47\textwidth]{
-    \includegraphics[scale=0.35]{images/128_hiff_results.png}
-    \label{fig:subfig3}
-    }
-}
-\subfigure[]{
-\makebox[.47\textwidth]{
-    \includegraphics[scale=0.35]{images/royal_road_128_results.png}
-    \label{fig:subfig3}
-    }
-}
-\subfigure[]{
-\makebox[.47\textwidth]{
-    \includegraphics[scale=0.35]{images/max_sat.png}
-    \label{fig:subfig4}
-    }
-}
-
-\caption[Optional caption for list of figures]{Plots showing for each experiment the mean fitness of the best solution in the population over time, averaged over 10 trials.}
-\label{figure:experiment_subplots}
-\end{figure}
+\subsubsection{MAXSAT}
+\subsection{Continuous}
+\subsubsection{Sphere}
+\subsubsection{Rosenbrock}
+\subsubsection{Rastrigin}
+\subsection{Accumulation of Adaptation}
+To answer the question of whether solving previous problems can speedup convergence on unseen problems in the same class, a new task was devised that was influenced by Watson et al \cite{watson_evolution}. DAGA is applied to solve three problems in sequence, without reinitialising the weights of the DA. The problems consist of minimising the hamming distance to a target string. The algorithm is evaluated on the difference in the number of iterations needed to solve the third problem after solving the first two, compared to solving the third problem on its own. The first and second solutions are a square and cross pattern. The third solution is a pattern made by recombining quarters from the original patterns. As each new solution can inherit a quarter from either the cross or the square pattern, there are \(2^4\) unique solutions. DAGA is tested on training on the cross and the square and then on one of the 16, as well as the square and the cross and then on of the other, leading to 32 experiments. 
 
 \section{Results}
-DAGA is compared to a canonical generational Genetic Algorithm (GA) on the problems described in Section~\ref{sec:experiments}. The GA employs tournament selection to select parents, two point crossover for recombination (with probability \(p_c\)) and a probability, \(p_m\), of a bit flip mutation at each allele. The GA is implemented in the DEAP framework \cite{deap}, while DAGA is implemented in Python, using Theano for the \(dA\). Programming code is available in the online supplementary material.  For each experiment a large parameter sweep was performed on both DAGA and the GA and the best found configurations were chosen for comparison. Figure~\ref{figure:experiment_subplots} presents graphs showing the mean fitness (averaged over ten trials) of the best solution in the population at each iteration for the two algorithms on the 5 problems. Details of the best solutions found are given in Table~\ref{table:main_results}.
-
-From Figure~\ref{figure:experiment_subplots}  we can immediately see that DAGA finds significantly better solutions or optimal solutions significantly faster than the GA. On three of the five experiments (both knapsacks and MAXSAT), DAGA finds significantly better solutions than the GA, within the given evaluation limits. On the Weing8 knapsack instance DAGA reaches the optimum solution 8 out of 10 attempts, and on the 500-item instance 7 out of 10 attempts. On the MAXSAT instance, DAGA also reaches the optimum 70\% of the time. On all three of these problems the GA is unable to locate the optimal solution a single time. On the HIFF, DAGA locates the optimal solution every time, while the GA locates it on only half of the trials. On the Royal Road, DAGA again locates the global optima on every trial, while the GA finds it on 9 out of 10. These results show that on a wide range of problems DAGA is able to find higher quality solutions and more consistently locate the optimum compared to a GA.
+On the discrete and continuous problems, DAGA is compared to a canonical generational Genetic Algorithm (GA). On the continuous problems it is additionally compared to a (1+1)-ES with the 1/5 rule \cite{Igel benchmarking}. The GA employs tournament selection, two point crossover (with probability \(p_c\)) and on the discrete problems there is a probability, \(p_m\), of a bit flip mutation at each allele, while on the continuous problems there is probability, \(p_m\), of adding Gaussian noise to each component of the vector from \(N(0, \delta)\). Programming code is available in the online supplementary material.  For each experiment a large parameter sweep was performed on both DAGA and the GA and the best found configurations were chosen for comparison. Due to the stochastic nature of the algorithms each experiment is repeated 10 times.
+\subsection{Discrete}
+Table~\ref{table:main_results} presents details of the best solution in the population at quarter intervals of a run for DAGA and the GA on the 6 problems described above in 4.1. The table shows that DAGA finds either significantly better solutions, or optimal solutions significantly faster than the GA. On three of the five experiments (both knapsacks and MAXSAT), DAGA finds significantly better solutions than the GA, within the given evaluation limits. On the Weing8 knapsack instance DAGA reaches the optimum solution 8 out of 10 attempts, and on the 500-item instance 7 out of 10 attempts. On the MAXSAT instance, DAGA also reaches the optimum 70\% of the time. On all three of these problems the GA is unable to locate the optimal solution a single time. On the 128-bit HIFF, DAGA locates the optimal solution every time, while the GA locates it on only half of the trials. On the Royal Road, DAGA again locates the global optima on every trial, while the GA finds it on 9 out of 10. These results show that on a wide range of discrete problems DAGA is able to find higher quality solutions and more consistently locate the optimum compared to a GA.
 
  \begin{table}[t!]
     \begin{tabular}{ | p{1.8cm} | l | l | l | l | l | l | l | l | p{1cm} |}
@@ -214,24 +217,73 @@ From Figure~\ref{figure:experiment_subplots}  we can immediately see that DAGA f
     \caption{Results for DAGA and the GA on the 5 problems. Showing the value of the minimum and maximum solution returned at the end of search, and the mean best solution in the population after 25\%, 50\%, 75\% and 100\% of evaluations had been completed, across 10 trials. Stars indicate that the mean result for DAGA is significantly different from the GA according to a Wilcoxan Rank Sum test (\(p<0.05\)).}
 \end{table}
 
-As well as frequently obtaining better quality solutions at the end of the optimisation process, DAGA also finds significantly better solutions than the GA at earlier stages in the optimisation process on a number of the tested problems. Table~\ref{table:main_results} shows the mean best solution found after different numbers of function evaluations have passed. From this we see that on all of the problems, apart from RR, DAGA finds significantly better solutions than the GA after a quarter of function evaluations have passed. On the HIFF and RR functions, the GA is able to locate optimal solutions eventually but not consistently. DAGA is statistically significantly better after 25\%, 50\% and 75\% of evaluations have passed on the HIFF. On this difficult problem, DAGA finds the optimum after 230,000 evaluations on average, with 200,000 in the fastest case and 285,000 in the slowest. At its fastest, the GA finds the optimum after 300,000 evaluations (mean 332,000 on the successful attempts), although on half the trials it fails to reach the optimum after 500,000. On RR, DAGA has a better mean score from the first quarter onwards, but the GA regularly reaches the optimum solution and their scores are not significantly different statistically (p=0.13 from 25\% to 50\%).
+As well as frequently obtaining better quality solutions at the end of the optimisation process, DAGA also finds significantly better solutions than the GA at earlier stages in the optimisation process on a number of the tested problems. Table~\ref{table:main_results} shows the mean best solution found after different numbers of function evaluations have passed. From this we see that on all of the problems, apart from RR, DAGA finds significantly better solutions than the GA after a quarter of function evaluations have passed. On the 128-bit HIFF and RR functions, the GA is able to locate optimal solutions eventually but not consistently. DAGA is statistically significantly better after 25\%, 50\% and 75\% of evaluations have passed on the 128-bit HIFF. On this difficult problem, DAGA finds the optimum after 230,000 evaluations on average, with 200,000 in the fastest case and 285,000 in the slowest. At its fastest, the GA finds the optimum after 300,000 evaluations (mean 332,000 on the successful attempts), although on half the trials it fails to reach the optimum after 500,000. On RR, DAGA has a better mean score from the first quarter onwards, but the GA regularly reaches the optimum solution and their scores are not significantly different statistically (p=0.13 from 25\% to 50\%).
 
-Table~\ref{} presents the parameter values for the chosen configuration of DAGA and the GA used to solve each problem. A noticeable trend is that two of the problems use a very high corruption level (Knapsack 500 and RR) while the others use a low number. The high corruption level (CL) instances could be seen as easier to solve, as the knapsack instance, although larger than Weing8, has only one set of constraints and RR has few local optima. Figure~\ref{figure:corruption} shows the effect of varying CL from 0.0 - 1.0 on the 500-bit knapsack. It is clear that CL has a large impact on the convergence speed, with high CLs finding high quality solutions very quickly.
+\subsection{Continuous}
+Results for DAGA, (1+1)-ES and the GA are presented in Table~\ref{table:continuous_results} for the sphere, Rosenbrock and Rastrigin functions. On all three of these problems DAGA outperforms the GA, and is able to reach significantly better solutions with fewer evaluations. However, the (1+1)-ES is considerably better on the sphere and Rosenbrock functions, achieving significantly better solutions in the first quarter of evaluations (25,000 and 75,000 respectively) than DAGA can over the whole run (100,000 and 300,000). This implies that the (1+1)-ES is a much more efficient continuous optimiser on these search spaces. However, the (1+1)-ES performs extremely badly on the Rastrigin, which consists of many local optima. Here, the population-based GA and DAGA excel, getting much closer to the optimal solution of 0. DAGA is significantly better than the GA and the only algorithm to find solutions under 1.0. 
+ \begin{table}[t!]
+    \begin{tabular}{ | p{1.8cm} | l | l | l | l | l | l | l | l | |}
+    \hline
+    Experiment & Algorithm & Min & Max & Mean 1Q & Mean 2Q & Mean 3Q & Mean 4Q \\ \hline
+    Sphere 50D & GA & 0.065 & 0.101 & 25.178 \(\pm\)10.900 & 0.165 \(\pm\)0.088 & 0.125 \(\pm\)0.032 & 0.088 \(\pm\)0.016\\
+    & (1+1)-ES & 0.000 & 0.000 & 0.000 \(\pm\)0.000 & 0.000 \(\pm\)0.000 & 0.000 \(\pm\)0.000 & 0.000 \(\pm\)0.000\\
+    & AE & 0.026 & 0.033 & 0.376 \(\pm\)0.016 & 0.055 \(\pm\)0.004 & 0.037 \(\pm\)0.002 & 0.029 \(\pm\)0.003\\\hline
+    Rosenbrock 10D & GA & 0.547 & 0.800 & 5.092 \(\pm\)1.371 & 2.026 \(\pm\)0.930 & 0.830 \(\pm\)0.133 & 0.659 \(\pm\)0.106\\
+    & (1+1)-ES & 0.000 & 0.000 & 0.003 \(\pm\)0.000 & 0.000 \(\pm\)0.000 & 0.000 \(\pm\)0.000 & 0.000 \(\pm\)0.000\\
+    & AE & 0.018 & 0.082 & 0.117 \(\pm\)0.033 & 0.058 \(\pm\)0.022 & 0.049 \(\pm\)0.019 & 0.042 \(\pm\)0.018\\\hline
+     Rastrigin 10D & GA & 1.395 & 4.347 & 3.132 \(\pm\)1.245 & 3.098 \(\pm\)1.232 & 3.047 \(\pm\)1.284 & 3.058 \(\pm\)1.234\\ 
+    & (1+1)-ES & 37.808 & 160.187 & 89.844 \(\pm\)33.520 & 89.844 \(\pm\)33.520 & 89.844 \(\pm\)33.520 & 89.844 \(\pm\)33.520\\
+    & AE & 0.601 & 1.277 & 1.145 \(\pm\)0.327 & 1.002 \(\pm\)0.275 & 0.945 \(\pm\)0.209 & 0.888 \(\pm\)0.203\\\hline
+    \end{tabular}
+    \label{table:continuous_results}
+    \caption{Results for DAGA, (1+1)-ES and the GA on 3 continuous problems. Showing the value of the minimum and maximum solution returned at the end of search, and the mean best solution in the population after 25\%, 50\%, 75\% and 100\% of evaluations had been completed, across 10 trials. A 100,000 evaluation limit is used on sphere and 300,000 is used on the other two.  On each function results were found to have significant differences on a one way ANOVA (\(p<0.05\)), post-hoc analysis with a t-test and the Bonferroni correction for multiple comparisons showed significant differences between all pairs (\(p<0.05\)).}
+\end{table}
 
-% Talk about speed and significance at different running times
-% Talk about how a solution "evolves".
-% Talk about sensitivity on corruption.
+
+\subsection{Accumulation of Adaptations}
+Results for DAGA on the image generation task described in Section 4.3 are presented in Table x. We see that in every case, there is a significant speed up when DAGA solves the first two problems before solving the third. 
+
+ \begin{table}[t!]
+    \begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | l | l| l| l| l|}
+    \hline
+    & a &c &b &e &d &g &f &i &h &k &j &m &l &n &p \\ \hline
+    a then p & 21.91 & 18.82 & 33.64 & 10.00 & 46.09 & 11.09 & 27.82 & 46.27 & 84.09 & 43.55 & 42.18 & 44.18 & 63.45 & 53.45 & 173.64\\\hline
+    p then a & 117.36 & 46.55 & 63.18 & 54.45 & 65.91 & 44.18 & 62.36 & 74.82 & 91.55 & 55.91 & 61.27 & 72.18 & 57.00 & 70.36 & 125.18\\\hline
+    \end{tabular}
+    \label{table:accumulation_results}
+    \caption{Showing the difference between mean number of iterations taken to solve the image labelled on the top row without pre-learning and the mean number of iterations taken with pre learning on the two solutions labelled in the first column, averaged over 10 trials. All mean iterations are significantly different, Wilcoxan Rank Sum test (\(p<0.05\)). NOTE: MISSING O!!!!}
+\end{table}
 
 \begin{figure}[t!]
 \center
-\includegraphics[width = 0.8\textwidth]{images/corruption_tests.png}
+\includegraphics[width = 1.0\textwidth]{images/boxy_square_cmap.png}
 
-\caption{Showing the fitness of the best solution in the population over time of DAGA with different corruption levels on the Knapsack 500 problem, averaged over 5 trials.} 
-\label{figure:corruption}
+\caption{Showing the difference between mean number of iterations taken to solve the image pictured on the top row without pre-learning and the mean number of iterations taken with pre learning on the two solutions pictured in the first column, averaged over 10 trials.} 
+\label{figure:cross_square_grid}
 \end{figure}
 
+\begin{figure}[!]
+\centering
+\subfigure[]{
+\makebox[.5\textwidth]{
+    \includegraphics[scale=0.5]{images/first_pop.png}
+    \label{fig:subfig1}
+    %\caption{After solving the box and cross}
+    }
+}
+\subfigure[]{
+\makebox[.5\textwidth]{
+    \includegraphics[scale=0.5]{images/no_learning.png}
+    \label{fig:subfig2}
+    %\caption{Start of training}
+    }
+}
+\caption[Optional caption for list of figures]{Showing the output of 100 random inputs passed through the autoencoder (a) after solving the cross and then the box tasks and (b) at the start of the optimisation process.}
+\label{figure:experiment_subplots}
+\end{figure}
 \section{Discussion}
 % HyperPothesis: When the input features are independent then high corruption helps because you don't care about information in the input as much, and you're forcing solutions to have a similar structure (the output structure is not dependant on the input structure because independent. On structured problems like the HIFF there is a lot of information in the inputs, so distorting this discards the information that might be useful.)
+
 \section{Conclusion}
 
 \subsubsection*{Acknowledgments.} The work is funded by the FQEB Templeton grant ``Bayes and Darwin", and the FP-7 FET OPEN Grant INSIGHT.

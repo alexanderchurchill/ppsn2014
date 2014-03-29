@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  9 MAR 2014 18:42
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  28 MAR 2014 22:27
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -285,10 +285,7 @@ Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
 (./autoencoder_ppsn.aux
 
-LaTeX Warning: Label `fig:subfig3' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:subfig3' multiply defined.
+LaTeX Warning: Label `figure:8bithiff' multiply defined.
 
 )
 \openout1 = `autoencoder_ppsn.aux'.
@@ -438,130 +435,174 @@ LaTeX Warning: Citation `singapore' on page 2 undefined on input line 85.
 LaTeX Warning: Citation `ref' on page 2 undefined on input line 87.
 
 
-Overfull \hbox (3.48827pt too wide) in paragraph at lines 93--94
+LaTeX Warning: Citation `pelikan2002survey' on page 2 undefined on input line 9
+4.
+
+[2]
+
+LaTeX Warning: Citation `hinton2006reducing' on page 3 undefined on input line 
+97.
+
+
+LaTeX Warning: Citation `vincent2008extracting' on page 3 undefined on input li
+ne 99.
+
+
+LaTeX Warning: Citation `Watson' on page 3 undefined on input line 101.
+
+
+Underfull \vbox (badness 2158) has occurred while \output is active []
+
+ [3]
+<images/boxplots_basins.png, id=19, 578.16pt x 433.62pt>
+File: images/boxplots_basins.png Graphic file (type png)
+
+<use images/boxplots_basins.png>
+<images/hiff-8-transition.png, id=21, 578.16pt x 433.62pt>
+File: images/hiff-8-transition.png Graphic file (type png)
+
+<use images/hiff-8-transition.png>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4 <./images/boxplots_basins.png> <./images/hiff-8-transition.png>]
+Overfull \hbox (3.48827pt too wide) in paragraph at lines 125--126
 \OT1/cmr/m/n/10 The non-linear ac-ti-va-tion func-tion $\OML/cmm/m/it/10 f$ \OT
 1/cmr/m/n/10 can be any one of the stan-dard non-linearities
  []
 
-[2]
 
-LaTeX Warning: Citation `bishop1995neural' on page 3 undefined on input line 10
-4.
+LaTeX Warning: Citation `bishop1995neural' on page 5 undefined on input line 13
+6.
 
+[5]
 
-LaTeX Warning: Citation `vincent2010stacked' on page 3 undefined on input line 
-108.
-
-
-LaTeX Warning: Citation `rifai2011contractive' on page 3 undefined on input lin
-e 108.
+LaTeX Warning: Citation `vincent2010stacked' on page 6 undefined on input line 
+140.
 
 
-LaTeX Warning: Citation `vincent2010stacked' on page 3 undefined on input line 
-110.
+LaTeX Warning: Citation `rifai2011contractive' on page 6 undefined on input lin
+e 140.
 
 
-LaTeX Warning: Citation `chapelle2006semi' on page 3 undefined on input line 11
-0.
+LaTeX Warning: Citation `vincent2010stacked' on page 6 undefined on input line 
+142.
 
 
-Overfull \hbox (4.0572pt too wide) in paragraph at lines 110--111
+LaTeX Warning: Citation `chapelle2006semi' on page 6 undefined on input line 14
+2.
+
+
+Overfull \hbox (4.0572pt too wide) in paragraph at lines 142--143
 []\OT1/cmr/m/n/10 The in-put $\OT1/cmr/bx/n/10 x$ \OT1/cmr/m/n/10 is first cor-
 rupted us-ing a stochas-tic cor-rup-tion pro-cess $[]$.
  []
 
-[3]
+[6]
 
-LaTeX Warning: Citation `vincent2010stacked' on page 4 undefined on input line 
-117.
-
-[4]
-
-LaTeX Warning: Citation `ref' on page 5 undefined on input line 138.
+LaTeX Warning: Citation `vincent2010stacked' on page 7 undefined on input line 
+149.
 
 
-LaTeX Warning: Citation `ref' on page 5 undefined on input line 142.
+LaTeX Warning: Citation `ref' on page 7 undefined on input line 171.
 
-[5]
+[7]
 
-LaTeX Warning: Citation `mitchell' on page 6 undefined on input line 145.
+LaTeX Warning: Citation `ref' on page 8 undefined on input line 175.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 145--147
+LaTeX Warning: Citation `mitchell' on page 8 undefined on input line 178.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 178--180
 
  []
 
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!htbp') on input line 156.
+LaTeX Warning: Citation `watson_evolution' on page 8 undefined on input line 19
+4.
 
-<images/105_knapsacks.png, id=33, 578.16pt x 433.62pt>
-File: images/105_knapsacks.png Graphic file (type png)
+[8]
 
-<use images/105_knapsacks.png>
-<images/knapsack_500_results.png, id=35, 578.16pt x 433.62pt>
-File: images/knapsack_500_results.png Graphic file (type png)
-
-<use images/knapsack_500_results.png>
-<images/128_hiff_results.png, id=36, 578.16pt x 433.62pt>
-File: images/128_hiff_results.png Graphic file (type png)
-
-<use images/128_hiff_results.png>
-<images/royal_road_128_results.png, id=37, 578.16pt x 433.62pt>
-File: images/royal_road_128_results.png Graphic file (type png)
-
-<use images/royal_road_128_results.png>
-<images/max_sat.png, id=38, 578.16pt x 433.62pt>
-File: images/max_sat.png Graphic file (type png)
- <use images/max_sat.png>
-
-LaTeX Warning: Citation `deap' on page 6 undefined on input line 194.
+LaTeX Warning: Citation `Igel benchmarking' on page 9 undefined on input line 1
+97.
 
 
-Package caption Warning: \label before \caption on input line 213.
+Package caption Warning: \label before \caption on input line 216.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `table:main_results' on page 6 undefined on input line
- 194.
+LaTeX Warning: Reference `table:main_results' on page 9 undefined on input line
+ 199.
 
-[6] [7 <./images/105_knapsacks.png> <./images/knapsack_500_results.png> <./imag
-es/128_hiff_results.png> <./images/royal_road_128_results.png> <./images/max_sa
-t.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 206--206
+
+Underfull \hbox (badness 10000) in paragraph at lines 209--209
 []\OT1/cmr/m/n/9 Knapsack
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 208--208
+Underfull \hbox (badness 10000) in paragraph at lines 211--211
 []\OT1/cmr/m/n/9 Knapsack
  []
 
 
-Overfull \hbox (38.38046pt too wide) in paragraph at lines 199--214
+Overfull \hbox (38.38046pt too wide) in paragraph at lines 202--217
 [][]
  []
 
 
-Package caption Warning: \label before \caption on input line 213.
+Package caption Warning: \label before \caption on input line 216.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `table:main_results' on page 8 undefined on input line
- 217.
+LaTeX Warning: Reference `table:main_results' on page 9 undefined on input line
+ 220.
+
+[9]
+
+Package caption Warning: \label before \caption on input line 238.
+See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `' on page 8 undefined on input line 219.
+LaTeX Warning: Reference `table:continuous_results' on page 10 undefined on inp
+ut line 223.
 
 
-Underfull \vbox (badness 2418) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 231--231
+[]\OT1/cmr/m/n/9 Rosenbrock
+ []
 
- [8]
-<images/corruption_tests.png, id=55, 578.16pt x 433.62pt>
-File: images/corruption_tests.png Graphic file (type png)
 
-<use images/corruption_tests.png> (./autoencoder_ppsn.bbl) [9 <./images/corrupt
-ion_tests.png>] (./autoencoder_ppsn.aux)
+Underfull \hbox (badness 10000) in paragraph at lines 234--234
+[]\OT1/cmr/m/n/9 Rastrigin
+ []
+
+
+Overfull \hbox (70.55728pt too wide) in paragraph at lines 225--239
+[][]
+ []
+
+[10]
+Overfull \hbox (56.88594pt too wide) in paragraph at lines 247--254
+[][]
+ []
+
+<images/boxy_square_cmap.png, id=55, 578.16pt x 135.1449pt>
+File: images/boxy_square_cmap.png Graphic file (type png)
+
+<use images/boxy_square_cmap.png>
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!htbp') on input line 265.
+
+<images/first_pop.png, id=56, 578.16pt x 433.62pt>
+File: images/first_pop.png Graphic file (type png)
+ <use images/first_pop.png>
+<images/no_learning.png, id=57, 578.16pt x 433.62pt>
+File: images/no_learning.png Graphic file (type png)
+
+<use images/no_learning.png> (./autoencoder_ppsn.bbl [11]) [12 <./images/boxy_s
+quare_cmap.png>] [13 <./images/first_pop.png> <./images/no_learning.png>]
+(./autoencoder_ppsn.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -570,13 +611,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3825 strings out of 493747
- 54359 string characters out of 3143546
- 128595 words of memory out of 3000000
- 7052 multiletter control sequences out of 15000+200000
+ 3823 strings out of 493747
+ 54279 string characters out of 3143546
+ 136680 words of memory out of 3000000
+ 7051 multiletter control sequences out of 15000+200000
  11544 words of font info for 44 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 38i,9n,38p,1696b,302s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,10n,38p,1696b,313s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></
@@ -593,10 +634,10 @@ ve/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive
 010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/201
 0/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2010/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on autoencoder_ppsn.pdf (9 pages, 460448 bytes).
+Output written on autoencoder_ppsn.pdf (13 pages, 453964 bytes).
 PDF statistics:
- 111 PDF objects out of 1000 (max. 8388607)
- 71 compressed objects within 1 object stream
+ 122 PDF objects out of 1000 (max. 8388607)
+ 80 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
